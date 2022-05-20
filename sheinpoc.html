@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+	<script>
+			window.onload=function(){
+			window.Wing = {'onSuccess':function(reqId,header){
+				console.log("onSuccess")	;
+				console.log(reqId);
+				console.log(header);
+				if(header.ret == "HYBRID_SUCCESS"){
+					delete header.headers["abt-params"]
+					delete header.headers["activity-abt-params"]
+					document.write(JSON.stringify(header));
+				}
+			}};
+			window.webkit.messageHandlers.Wing.postMessage(JSON.stringify({"name":"WingHeader","action":"get","reqId":"54525","param":""}));
+		};
+	</script>
+	</body>
+</html>
