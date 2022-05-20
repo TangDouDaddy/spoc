@@ -12,6 +12,7 @@
 				if(header.ret == "HYBRID_SUCCESS"){
 					delete header.headers["abt-params"]
 					delete header.headers["activity-abt-params"]
+					delete header.headers["ret"]
 					document.write(JSON.stringify(header));
 				}
 			}};
