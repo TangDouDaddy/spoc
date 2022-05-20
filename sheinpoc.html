@@ -12,8 +12,7 @@
 				if(header.ret == "HYBRID_SUCCESS"){
 					delete header.headers["abt-params"]
 					delete header.headers["activity-abt-params"]
-					delete header.headers["ret"]
-					document.write(JSON.stringify(header));
+					document.write(JSON.stringify(header.headers));
 				}
 			}};
 			window.webkit.messageHandlers.Wing.postMessage(JSON.stringify({"name":"WingHeader","action":"get","reqId":"54525","param":""}));
